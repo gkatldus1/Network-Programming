@@ -28,6 +28,7 @@ main(int argc, char **argv)
 	bzero(&servaddr, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
 	servaddr.sin_port = htons(5001);
+
 	servaddr.sin_addr.s_addr = inet_addr("192.168.111.200");
 	
 	//server sendto

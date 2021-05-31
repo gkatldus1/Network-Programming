@@ -142,21 +142,22 @@ main(int argc, char **argv)
 					if(buf[strlen(buf)-1] == '\n') buf[strlen(buf)-1] = '\0';
 					int point = 0;
 					for(int i = 0; i < strlen(buf); i++){
-						if (buf[i] == ',')
+						if (buf[i] == ','){
 							point = i;
+							break;
+						}
 									
 					}
 					
 					for(int i = 0; i < point; i++){
 						ID[i] = buf[i];
 					}
+					int pd = 0;
 					for(int i = point+1; i <strlen(buf); i++){
-						int pd = 0;
 						passwd[pd] = buf[i];
-						printf("%c", buf[i]);
 						pd ++;
 					} 
-					
+					printf("pwd:%s", passwd);
 					if(strcmp(ID, "AhnYoungah")==0){
 						if(strcmp(passwd, "1234567")==0){
 							bzero(buf, sizeof(buf));
